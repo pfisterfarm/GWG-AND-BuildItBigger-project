@@ -9,6 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:textStyle="bold"
         android:textSize="24sp"
         android:text="I've got a joke for you!"/>
@@ -17,7 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textSize="16dp"
+        android:padding="16dp"
+        android:textSize="16sp"
         android:id="@+id/joke_tv"
         tools:text = "Why did the Android phone cross the road?" />
 

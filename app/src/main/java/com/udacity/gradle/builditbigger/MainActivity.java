@@ -6,13 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.pfisterfarm.javajokelib.*;
-import com.pfisterfarm.JokeActivity.*;
+import com.pfisterfarm.androidjokelib.androidjokelib;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements JokeAsyncTask.Callback {
 
     private static final String TELL_JOKE = "tell_joke";
 
@@ -46,11 +45,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-//        Toast.makeText(this, JavaJokeLib.tellMeAJoke(), Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, JokeActivity.class);
-        intent.putExtra(TELL_JOKE, JavaJokeLib.tellMeAJoke());
-        startActivity(intent);
+        JokeAsyncTask getJokeTask = new JokeAsyncTask(this);
+        getJokeTask.execute(this);
     }
 
 
+    @Override
+    public void jokeFetched(String fetchedJoke) {
+        Intent intent = new Intent(this, androidjokelib.class);
+        intent.putExtra(TELL_JOKE, fetchedJoke);
+        startActivity(intent);
+    }
 }
