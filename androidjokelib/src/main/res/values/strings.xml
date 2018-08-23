@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidJokeLib</string>
+    <string name="gotAJokeLabel">I\'ve got a joke for you!</string>
+    <string name="jokePlaceholderText">Why did the Android phone cross the road?</string>
 </resources>
